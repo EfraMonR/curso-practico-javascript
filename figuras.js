@@ -68,21 +68,21 @@ function calcularAreaCuadrado() {
 
 //Funciones de los botones para el triangulo desde el HTML
 function calcularPerimetroTriangulo() {
-    const inputlado1 = document.getElementById("InputLado1Triangulo"); //El elemento es recodigo por el input en String se debe transformar a float por parseFloat en la función
-    const inputlado2 = document.getElementById("InputLado2Triangulo");
-    const inputbase = document.getElementById("InputBaseTriangulo");
-    const lado1 = inputlado1.value;
-    const lado2 = inputlado2.value;
-    const base = inputbase.value;
+    const inputLado1 = document.getElementById("InputLado1Triangulo"); //El elemento es recodigo por el input en String se debe transformar a float por parseFloat en la función
+    const inputLado2 = document.getElementById("InputLado2Triangulo");
+    const inputBase = document.getElementById("InputBaseTriangulo");
+    const lado1 = inputLado1.value;
+    const lado2 = inputLado2.value;
+    const base = inputBase.value;
     const perimetro = perimetroTriangulo(lado1,lado2,base);
     alert("El perimetro del tríangulo es: " + perimetro + "cm")
 }
 
 function calcularAreaTriangulo() {
-    const inputbase = document.getElementById("InputBaseTriangulo");
-    const inputaltura = document.getElementById("InputAlturaTriangulo")
-    const base = inputbase.value;
-    const altura = inputaltura.value;
+    const inputBase = document.getElementById("InputBaseTriangulo");
+    const inputAltura = document.getElementById("InputAlturaTriangulo")
+    const base = inputBase.value;
+    const altura = inputAltura.value;
     const area = areaTriangulo(base,altura);
     alert("El perimetro del tríangulo es: " + area + "cm²")
 }
@@ -106,5 +106,36 @@ function calcularAreaCirculo() {
     const radio = document.getElementById("InputRadioCirculo");
     const medida = radio.value;
     const area = areaCirculo(medida);
-    alert("El perimetro del círculo es: " + area + "cm");
+    alert("El area del círculo es: " + area + "cm");
+}
+
+//Función del tríangulo Isosceles
+function trianguloIsosceles(lado1,lado2,base) {
+    if (lado1 != lado2 || lado1 == base || lado2 == base) {
+        return alert("No se cumplen las condiciones para un triangulo isosceles");
+    } else {
+        const altura = Math.sqrt((lado1 * lado1) - ((base * base) / 4));
+        return alert("La altura del tríangulo es: " + altura + "cm");
+    }
+}
+
+//Función del tríangulo Isosceles
+/*function trianguloIsosceles(lado,base) {
+    if (lado == base) {
+        return alert("No se cumplen las condiciones para un triangulo isosceles todos los lados son iguales");
+    } else {
+        const altura = Math.sqrt((lado * lado) - ((base * base) / 4));
+        return altura;
+    }
+}*/
+
+function calcularAlturaIsosceles() {
+    const inputLado1 = document.getElementById("InputIsosceles1");
+    const inputLado2 = document.getElementById("InputIsosceles2");
+    const inputBase = document.getElementById("InputIsoscelesBase");
+    const lado1 = inputLado1.value;
+    const lado2 = inputLado2.value;
+    const base = inputBase.value;
+    const altura = trianguloIsosceles(lado1,lado2,base);
+    //alert("La altura del tríangulo es: " + altura + "cm")
 }
