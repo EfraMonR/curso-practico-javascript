@@ -47,6 +47,8 @@ if (esPar(lista1.length)) {
 
 //Función para calcular mediana de cualquier arreglo
 function calcularMediana(list) {
+    list.sort((a, b) => a - b); //Ordena de manera ascendente
+    
     const middleList = parseInt(list.length / 2);
 
     function esPar(numerito) {
@@ -65,7 +67,6 @@ function calcularMediana(list) {
         );
     
         const promedioLista = sumaLista / lista.length
-    
         return promedioLista;
     }
 
@@ -88,7 +89,7 @@ function calcularMediana(list) {
 }
 
 const prueba = [
-    800,
+    500,
     250,
     300,
     1000,
