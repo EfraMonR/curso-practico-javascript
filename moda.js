@@ -37,6 +37,41 @@ const lista1Array = Object.entries(lista1Count).sort(
 const moda = lista1Array[lista1Array.length - 1]; //.length genera el tamaño del array, con eso se le resta -1 para poder saber cual es la ultima posición. (Empieza siempre desde 0)
 
 
+//Función para cálcular Moda
+function calcularModa(list) {
+    const listCount = {}
+    
+    list.map(
+        function(element) {
+            if (listCount[element]) {
+                listCount[element] += 1;
+            } else {
+                listCount[element] = 1;
+            }
+        }
+    )
 
+    const listArray = Object.entries(listCount).sort(
+        function(elementA, elementB) {
+            return elementA[1] - elementB[1];
+        }
+    );
 
+    const mode = listArray[listArray.length - 1];
+    console.log(mode);
+}
+
+const prueba = [
+    1,
+    2,
+    3,
+    1,
+    2,
+    3,
+    4,
+    2,
+    2,
+    2,
+    1,
+];
  
