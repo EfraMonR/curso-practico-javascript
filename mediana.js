@@ -57,19 +57,33 @@ function calcularMediana(list) {
         }
     }
 
+    function promedio(lista) {
+        const sumaLista = lista.reduce(
+            function(valorAcumulado = 0, nuevoElemento) {
+                return valorAcumulado + nuevoElemento;
+            }
+        );
+    
+        const promedioLista = sumaLista / lista.length
+    
+        return promedioLista;
+    }
+
     let mediana = 0;
 
-    if (esPar(list.length)) {
+    if (esPar(list.length) === true) { //Si o si comparar para validar la función del par o impar
         const elemento1 = list[middleList - 1]; 
         const elemento2 = list[middleList]; 
     
-        const promedioElemento1y2 = calcularMediaAritmetica([
+        const promedioElemento1y2 = promedio([
             elemento1, 
             elemento2,
-        ])
+        ]);
         mediana = promedioElemento1y2;
+        console.log(mediana);
     } else {
         mediana = list[middleList];
+        console.log(mediana);
     }
 }
 
