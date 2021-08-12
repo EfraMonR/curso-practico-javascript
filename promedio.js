@@ -21,3 +21,26 @@ function calcularMediaAritmetica(lista) {
 
     return promedioLista;
 }
+
+//Función Media Geometrica
+
+function mediaGeometrica(list) {
+    const multList = list.reduce(
+        function(valueAcu = 0, newElement) {
+            return valueAcu * newElement;
+        }
+    );
+
+    const geometrica = (multList) ** (1 / list.length);
+
+    return geometrica;
+}
+
+const pruebaGeo = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+];
